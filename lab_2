@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3/"
+     xml:base="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-3="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#включает_шаг -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#включает_шаг">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Рецепт"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Шаг_приготовления"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#использует_технику -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#использует_технику">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Шаг_приготовления"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Кулинарная_техника"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#состоит_из_ингредиента -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#состоит_из_ингредиента">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Рецепт"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Ингрериент"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#время_приготовления -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#время_приготовления">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Рецепт"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#название_рецепта -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#название_рецепта">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Рецепт"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#номер_шага -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#номер_шага">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Шаг_приготовления"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#описание_шага -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#описание_шага">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Шаг_приготовления"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Ингрериент -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Ингрериент"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Кулинарная_техника -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Кулинарная_техника"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Рецепт -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Рецепт"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Шаг_приготовления -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Шаг_приготовления"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Жарка -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Жарка">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Кулинарная_техника"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Куриное_яйцо -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Куриное_яйцо">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Ингрериент"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Подсолнечное_масло -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Подсолнечное_масло">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Ингрериент"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Рецепт_Яичница -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Рецепт_Яичница">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Рецепт"/>
+        <untitled-ontology-3:включает_шаг rdf:resource="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Шаг1_Разогреть_масло"/>
+        <untitled-ontology-3:включает_шаг rdf:resource="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Шаг2_Разбить_яйца"/>
+        <untitled-ontology-3:состоит_из_ингредиента rdf:resource="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Куриное_яйцо"/>
+        <untitled-ontology-3:состоит_из_ингредиента rdf:resource="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Подсолнечное_масло"/>
+        <untitled-ontology-3:время_приготовления rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5</untitled-ontology-3:время_приготовления>
+        <untitled-ontology-3:название_рецепта>&quot;Классическая яичница&quot;</untitled-ontology-3:название_рецепта>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Шаг1_Разогреть_масло -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Шаг1_Разогреть_масло">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Шаг_приготовления"/>
+        <untitled-ontology-3:использует_технику rdf:resource="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Жарка"/>
+        <untitled-ontology-3:номер_шага rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</untitled-ontology-3:номер_шага>
+        <untitled-ontology-3:описание_шага>Налейте масло на сковороду и разогрейте её в течение 1 минуты.</untitled-ontology-3:описание_шага>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Шаг2_Разбить_яйца -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Шаг2_Разбить_яйца">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Шаг_приготовления"/>
+        <untitled-ontology-3:использует_технику rdf:resource="http://www.semanticweb.org/user/ontologies/2026/8/untitled-ontology-3#Жарка"/>
+        <untitled-ontology-3:номер_шага rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</untitled-ontology-3:номер_шага>
+        <untitled-ontology-3:описание_шага>Аккуратно разбейте яйца на сковороду и готовьте на среднем огне 3-4 минуты.</untitled-ontology-3:описание_шага>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
