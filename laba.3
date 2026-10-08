@@ -1,0 +1,300 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.university.ru/ontology#"
+     xml:base="http://www.university.ru/ontology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.university.ru/ontology">
+
+    <owl:Ontology rdf:about="http://www.university.ru/ontology"/>
+
+    <!-- КЛАССЫ -->
+    <owl:Class rdf:about="#Факультет"/>
+    <owl:Class rdf:about="#Кафедра"/>
+    <owl:Class rdf:about="#Курс"/>
+    <owl:Class rdf:about="#Преподаватель"/>
+    <owl:Class rdf:about="#Студент"/>
+
+    <!-- ПОДКЛАССЫ ФАКУЛЬТЕТОВ -->
+    <owl:Class rdf:about="#ФИСТ">
+        <rdfs:subClassOf rdf:resource="#Факультет"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Строительный_факультет">
+        <rdfs:subClassOf rdf:resource="#Факультет"/>
+    </owl:Class>
+
+    <!-- ПОДКЛАССЫ КАФЕДР -->
+    <owl:Class rdf:about="#Кафедра_ВТ">
+        <rdfs:subClassOf rdf:resource="#Кафедра"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Кафедра_ИС">
+        <rdfs:subClassOf rdf:resource="#Кафедра"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Кафедра_ПГС">
+        <rdfs:subClassOf rdf:resource="#Кафедра"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Кафедра_АСП">
+        <rdfs:subClassOf rdf:resource="#Кафедра"/>
+    </owl:Class>
+
+    <!-- ПОДКЛАССЫ КУРСОВ -->
+    <owl:Class rdf:about="#Курс_ИВТ">
+        <rdfs:subClassOf rdf:resource="#Курс"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Курс_ИС">
+        <rdfs:subClassOf rdf:resource="#Курс"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Курс_ПГС">
+        <rdfs:subClassOf rdf:resource="#Курс"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Курс_АСП">
+        <rdfs:subClassOf rdf:resource="#Курс"/>
+    </owl:Class>
+
+    <!-- ОБЪЕКТНЫЕ СВОЙСТВА -->
+    <owl:ObjectProperty rdf:about="#hasFaculty">
+        <rdfs:domain rdf:resource="#Кафедра"/>
+        <rdfs:range rdf:resource="#Факультет"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasDepartment">
+        <rdfs:domain rdf:resource="#Курс"/>
+        <rdfs:range rdf:resource="#Кафедра"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#teaches">
+        <rdfs:domain rdf:resource="#Преподаватель"/>
+        <rdfs:range rdf:resource="#Курс"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#worksAt">
+        <rdfs:domain rdf:resource="#Преподаватель"/>
+        <rdfs:range rdf:resource="#Кафедра"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#studiesAt">
+        <rdfs:domain rdf:resource="#Студент"/>
+        <rdfs:range rdf:resource="#Курс"/>
+    </owl:ObjectProperty>
+
+    <!-- Свойства для SWRL-выводов -->
+    <owl:ObjectProperty rdf:about="#teachesAtFaculty">
+        <rdfs:domain rdf:resource="#Преподаватель"/>
+        <rdfs:range rdf:resource="#Факультет"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#colleagues">
+        <rdfs:domain rdf:resource="#Преподаватель"/>
+        <rdfs:range rdf:resource="#Преподаватель"/>
+    </owl:ObjectProperty>
+
+    <!-- ДАТА-СВОЙСТВА -->
+    <owl:DatatypeProperty rdf:about="#hasName">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasAge">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasPosition">
+        <rdfs:domain rdf:resource="#Преподаватель"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- ИНДИВИДУУМЫ: ФАКУЛЬТЕТЫ -->
+    <owl:NamedIndividual rdf:about="#ФИСТ_экземпляр">
+        <rdf:type rdf:resource="#ФИСТ"/>
+        <hasName>ФИСТ</hasName>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#СтройФак_экземпляр">
+        <rdf:type rdf:resource="#Строительный_факультет"/>
+        <hasName>Строительный факультет</hasName>
+    </owl:NamedIndividual>
+
+    <!-- ИНДИВИДУУМЫ: КАФЕДРЫ -->
+    <owl:NamedIndividual rdf:about="#Кафедра_ВТ">
+        <rdf:type rdf:resource="#Кафедра_ВТ"/>
+        <hasName>Кафедра Вычислительная техника</hasName>
+        <hasFaculty rdf:resource="#ФИСТ_экземпляр"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Кафедра_ИС">
+        <rdf:type rdf:resource="#Кафедра_ИС"/>
+        <hasName>Кафедра Информационные системы</hasName>
+        <hasFaculty rdf:resource="#ФИСТ_экземпляр"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Кафедра_ПГС">
+        <rdf:type rdf:resource="#Кафедра_ПГС"/>
+        <hasName>Кафедра Промышленное и гражданское строительство</hasName>
+        <hasFaculty rdf:resource="#СтройФак_экземпляр"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Кафедра_АСП">
+        <rdf:type rdf:resource="#Кафедра_АСП"/>
+        <hasName>Кафедра Архитектурно-строительное проектирование</hasName>
+        <hasFaculty rdf:resource="#СтройФак_экземпляр"/>
+    </owl:NamedIndividual>
+
+    <!-- ИНДИВИДУУМЫ: КУРСЫ -->
+    <owl:NamedIndividual rdf:about="#Курс_ИВТ">
+        <rdf:type rdf:resource="#Курс_ИВТ"/>
+        <hasName>Курс ИВТ</hasName>
+        <hasDepartment rdf:resource="#Кафедра_ВТ"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Курс_ИС">
+        <rdf:type rdf:resource="#Курс_ИС"/>
+        <hasName>Курс Информационные системы</hasName>
+        <hasDepartment rdf:resource="#Кафедра_ИС"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Курс_ПГС">
+        <rdf:type rdf:resource="#Курс_ПГС"/>
+        <hasName>Курс ПГС</hasName>
+        <hasDepartment rdf:resource="#Кафедра_ПГС"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Курс_АСП">
+        <rdf:type rdf:resource="#Курс_АСП"/>
+        <hasName>Курс АСП</hasName>
+        <hasDepartment rdf:resource="#Кафедра_АСП"/>
+    </owl:NamedIndividual>
+
+    <!-- ИНДИВИДУУМЫ: ПРЕПОДАВАТЕЛИ -->
+    <owl:NamedIndividual rdf:about="#Хайруллин">
+        <rdf:type rdf:resource="#Преподаватель"/>
+        <hasName>Хайруллин Имиль Дамирович</hasName>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</hasAge>
+        <hasPosition>Доцент</hasPosition>
+        <teaches rdf:resource="#Курс_ИВТ"/>
+        <worksAt rdf:resource="#Кафедра_ВТ"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Исхаков">
+        <rdf:type rdf:resource="#Преподаватель"/>
+        <hasName>Исхаков Ильнур Ирекович</hasName>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32</hasAge>
+        <hasPosition>Старший преподаватель</hasPosition>
+        <teaches rdf:resource="#Курс_ИВТ"/>
+        <worksAt rdf:resource="#Кафедра_ВТ"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Петров">
+        <rdf:type rdf:resource="#Преподаватель"/>
+        <hasName>Петров Иван Сергеевич</hasName>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</hasAge>
+        <hasPosition>Профессор</hasPosition>
+        <teaches rdf:resource="#Курс_ИС"/>
+        <worksAt rdf:resource="#Кафедра_ИС"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Сидорова">
+        <rdf:type rdf:resource="#Преподаватель"/>
+        <hasName>Сидорова Анна Павловна</hasName>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">38</hasAge>
+        <hasPosition>Доцент</hasPosition>
+        <teaches rdf:resource="#Курс_ИС"/>
+        <worksAt rdf:resource="#Кафедра_ИС"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Смирнов">
+        <rdf:type rdf:resource="#Преподаватель"/>
+        <hasName>Смирнов Алексей Владимирович</hasName>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">45</hasAge>
+        <hasPosition>Профессор</hasPosition>
+        <teaches rdf:resource="#Курс_ПГС"/>
+        <worksAt rdf:resource="#Кафедра_ПГС"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Кузнецова">
+        <rdf:type rdf:resource="#Преподаватель"/>
+        <hasName>Кузнецова Елена Дмитриевна</hasName>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42</hasAge>
+        <hasPosition>Доцент</hasPosition>
+        <teaches rdf:resource="#Курс_ПГС"/>
+        <worksAt rdf:resource="#Кафедра_ПГС"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Волков">
+        <rdf:type rdf:resource="#Преподаватель"/>
+        <hasName>Волков Дмитрий Андреевич</hasName>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">37</hasAge>
+        <hasPosition>Старший преподаватель</hasPosition>
+        <teaches rdf:resource="#Курс_АСП"/>
+        <worksAt rdf:resource="#Кафедра_АСП"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Морозова">
+        <rdf:type rdf:resource="#Преподаватель"/>
+        <hasName>Морозова Ольга Игоревна</hasName>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">34</hasAge>
+        <hasPosition>Ассистент</hasPosition>
+        <teaches rdf:resource="#Курс_АСП"/>
+        <worksAt rdf:resource="#Кафедра_АСП"/>
+    </owl:NamedIndividual>
+
+    <!-- ИНДИВИДУУМЫ: СТУДЕНТЫ (по 2 на курс для минимальности) -->
+    <owl:NamedIndividual rdf:about="#Тараканов">
+        <rdf:type rdf:resource="#Студент"/>
+        <hasName>Артём Тараканов</hasName>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</hasAge>
+        <studiesAt rdf:resource="#Курс_ИВТ"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Иванов">
+        <rdf:type rdf:resource="#Студент"/>
+        <hasName>Иванов Дмитрий</hasName>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</hasAge>
+        <studiesAt rdf:resource="#Курс_ИВТ"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Лебедев">
+        <rdf:type rdf:resource="#Студент"/>
+        <hasName>Лебедев Артем</hasName>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</hasAge>
+        <studiesAt rdf:resource="#Курс_ИС"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Соколова">
+        <rdf:type rdf:resource="#Студент"/>
+        <hasName>Соколова Дарья</hasName>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</hasAge>
+        <studiesAt rdf:resource="#Курс_ИС"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Морозов_студент">
+        <rdf:type rdf:resource="#Студент"/>
+        <hasName>Морозов Дмитрий</hasName>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</hasAge>
+        <studiesAt rdf:resource="#Курс_ПГС"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Волкова">
+        <rdf:type rdf:resource="#Студент"/>
+        <hasName>Волкова Анна</hasName>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22</hasAge>
+        <studiesAt rdf:resource="#Курс_ПГС"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Егоров">
+        <rdf:type rdf:resource="#Студент"/>
+        <hasName>Егоров Максим</hasName>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</hasAge>
+        <studiesAt rdf:resource="#Курс_АСП"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Павлова">
+        <rdf:type rdf:resource="#Студент"/>
+        <hasName>Павлова Ольга</hasName>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</hasAge>
+        <studiesAt rdf:resource="#Курс_АСП"/>
+    </owl:NamedIndividual>
+
+</rdf:RDF>
